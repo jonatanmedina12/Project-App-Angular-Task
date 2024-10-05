@@ -1,0 +1,98 @@
+/* src/app/components/task-form/task-form.component.css */
+.task-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 120px); /* Ajusta según la altura de tu header y footer */
+    padding: 20px;
+  }
+  
+  .task-form-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    padding: 40px;
+    width: 100%;
+    max-width: 500px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .task-form-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .task-form-title {
+    color: #333;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    text-align: center;
+  }
+  
+  .task-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  mat-form-field {
+    margin-bottom: 16px;
+  }
+  
+  ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: #e0e0e0;
+  }
+  
+  ::ng-deep .mat-form-field.mat-focused .mat-form-field-outline-thick {
+    color: #4caf50; /* Un tono de verde para distinguirlo de los otros formularios */
+  }
+  
+  mat-checkbox {
+    margin-bottom: 20px;
+  }
+  
+  .form-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 24px;
+  }
+  
+  button[type="submit"] {
+    flex: 1;
+    margin-right: 10px;
+  }
+  
+  button[type="button"] {
+    flex: 1;
+    margin-left: 10px;
+  }
+  
+  /* Animaciones */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .task-form-card {
+    animation: fadeIn 0.5s ease-out;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 600px) {
+    .task-form-card {
+      padding: 30px;
+    }
+  
+    .task-form-title {
+      font-size: 24px;
+    }
+  
+    .form-actions {
+      flex-direction: column;
+    }
+  
+    button[type="submit"],
+    button[type="button"] {
+      margin: 10px 0;
+      width: 100%;
+    }
+  }

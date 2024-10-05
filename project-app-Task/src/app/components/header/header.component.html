@@ -1,0 +1,14 @@
+<mat-toolbar color="primary">
+    <button mat-button routerLink="" >Task manager</button>
+    
+    <span class="spacer"></span>
+    <ng-container *ngIf="authService.isAuthenticated(); else loginButton" >
+        <button mat-button routerLink="/tasks" >Task</button>
+        <button mat-button routerLink="/profile" >profile</button>
+        <button mat-button (click)="logout()" >Logout</button>
+    </ng-container>
+    <ng-template #loginButton>
+        <button mat-button routerLink="/login" >Login</button>
+        <button mat-button routerLink="/register" >Register</button>
+    </ng-template>
+</mat-toolbar>
