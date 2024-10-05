@@ -40,6 +40,11 @@ Copy ng serve
 Abre tu navegador y navega a http://localhost:4200.
 ```
 
+## Link Video
+```
+Backend: https://youtu.be/im-OQV9eDRQ
+Frontend: https://youtu.be/M3NlfkS8IGA
+```
 ## Tecnologías
 
 - Angular 16
