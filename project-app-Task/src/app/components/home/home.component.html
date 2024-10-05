@@ -1,0 +1,37 @@
+<div class="home-container" @fadeInOut>
+    <header class="hero">
+      <h1>Welcome to Task Manager</h1>
+      <p class="subtitle">Organize your tasks efficiently and boost your productivity!</p>
+    </header>
+  
+    <section class="cta-section" *ngIf="!authService.currentUserValue">
+      <h2>Get Started</h2>
+      <div class="button-group">
+        <button mat-raised-button color="primary" routerLink="/register">Sign Up</button>
+        <button mat-raised-button color="accent" routerLink="/login">Log In</button>
+      </div>
+    </section>
+  
+    <section class="cta-section" *ngIf="authService.currentUserValue">
+      <h2>Quick Actions</h2>
+      <div class="button-group">
+        <button mat-raised-button color="primary" routerLink="/tasks">View Tasks</button>
+        <button mat-raised-button color="accent" routerLink="/tasks/new">Create New Task</button>
+      </div>
+    </section>
+  
+    <section class="features">
+      <h2>Key Features</h2>
+      <div class="feature-grid">
+        <mat-card class="feature-card" *ngFor="let feature of features" @fadeInOut>
+          <mat-card-header>
+            <mat-icon mat-card-avatar>{{feature.icon}}</mat-icon>
+            <mat-card-title>{{feature.title}}</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>{{feature.description}}</p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </section>
+  </div>

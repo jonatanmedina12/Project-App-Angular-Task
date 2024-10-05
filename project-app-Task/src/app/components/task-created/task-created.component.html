@@ -1,0 +1,39 @@
+<!-- src/app/components/task-form/task-form.component.html -->
+<div class="task-form-container">
+    <div class="task-form-card">
+      <h2 class="task-form-title">{{ 'Create New Task' }}</h2>
+      <form [formGroup]="taskForm" (ngSubmit)="onSubmit()" class="task-form">
+        <mat-form-field appearance="outline">
+          <mat-label>Task Name</mat-label>
+          <input matInput formControlName="name" placeholder="Enter task name">
+          <mat-icon matSuffix>assignment</mat-icon>
+          <mat-error *ngIf="taskForm.get('name')?.hasError('required')">
+            Task name is required
+          </mat-error>
+        </mat-form-field>
+        
+        <mat-form-field appearance="outline">
+          <mat-label>Description</mat-label>
+          <textarea matInput formControlName="description" placeholder="Enter task description" rows="3"></textarea>
+          <mat-icon matSuffix>description</mat-icon>
+        </mat-form-field>
+        
+        <mat-form-field appearance="outline">
+          <mat-label>Due Date</mat-label>
+          <input matInput [matDatepicker]="picker" formControlName="dueDate" placeholder="Choose a date">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        
+        <mat-checkbox formControlName="completed" color="primary">
+          Task Completed
+        </mat-checkbox>
+        <div class="form-actions">
+            <button mat-flat-button color="primary" type="submit" [disabled]="taskForm.invalid">
+              {{ 'Create' }}
+            </button>
+      
+          </div>
+      </form>
+    </div>
+  </div>

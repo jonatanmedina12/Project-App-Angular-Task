@@ -1,0 +1,116 @@
+/* src/app/components/register/register.component.css */
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 120px); /* Ajusta según la altura de tu header y footer */
+    padding: 20px;
+  }
+  
+  .register-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    padding: 40px;
+    width: 100%;
+    max-width: 400px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .register-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .register-title {
+    color: #333;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    text-align: center;
+  }
+  
+  .register-subtitle {
+    color: #666;
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 24px;
+  }
+  
+  .register-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  mat-form-field {
+    margin-bottom: 16px;
+  }
+  
+  ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: #e0e0e0;
+  }
+  
+  ::ng-deep .mat-form-field.mat-focused .mat-form-field-outline-thick {
+    color: #2196f3; /* Un tono de azul diferente al del login */
+  }
+  
+  button[type="submit"] {
+    margin-top: 24px;
+    height: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  button[type="submit"]:not([disabled]):hover {
+    background-color: #1e88e5; /* Un tono de azul diferente al del login */
+  }
+  
+  .login-link {
+    margin-top: 24px;
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .login-link a {
+    color: #2196f3;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .login-link a:hover {
+    color: #1e88e5;
+    text-decoration: underline;
+  }
+  
+  /* Animaciones */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .register-card {
+    animation: fadeIn 0.5s ease-out;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 600px) {
+    .register-card {
+      padding: 30px;
+    }
+  
+    .register-title {
+      font-size: 24px;
+    }
+  
+    .register-subtitle {
+      font-size: 14px;
+    }
+  
+    button[type="submit"] {
+      height: 44px;
+      font-size: 16px;
+    }
+  }
